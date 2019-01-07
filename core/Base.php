@@ -3,13 +3,16 @@
 /**
 * runphp架架核心
 */
-class Run
+namespace run;
+
+class Base
 {
     protected $config = [];
     
-    public  function __construct($config)
+    public  function __construct()
     {
-        $this->config = $config;
+        // 加载配置文件
+        $this->config = require(APP_PATH . 'config/config.php');;
     }
 
     public function start()
@@ -73,6 +76,7 @@ class Run
     // 自动加载控制器和模型类 
     public static function loadClass($class)
     {
+    
         $frameworks = __DIR__ . '/' . $class . '.php';
         $controllers = APP_PATH . 'application/controller/' . $class . '.php';
         $models = APP_PATH . 'application/model/' . $class . '.php';
