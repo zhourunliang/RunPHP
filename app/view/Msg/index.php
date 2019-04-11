@@ -66,15 +66,17 @@
             <div class="row" >
                 <div class="col-md-8 col-md-offset-1" id="id-div-msg-list">
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            测试标题
+                    <?php foreach ($msgs as $key => $value) { ?>                    
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <?php echo $value["title"] ?>
+                            </div>
+                            <div class="panel-body">
+                                <?php echo $value["content"] ?>
+                                <p class="text-right"><span>作者</span>@<time><?php echo $value["created"] ?></time></p>
+                            </div>
                         </div>
-                        <div class="panel-body">
-                            测试内容
-                            <p class="text-right"><span>作者</span>@<time>2019-01-08</time></p>
-                        </div>
-                    </div>
+                    <?php } ?>
 
                 </div>
             </div>

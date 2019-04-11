@@ -78,8 +78,8 @@ class Base
     {
     
         $frameworks = __DIR__ . '/' . $class . '.php';
-        $controllers = APP_PATH . 'application/controller/' . $class . '.php';
-        $models = APP_PATH . 'application/model/' . $class . '.php';
+        $controllers = APP_PATH . 'app/controller/' . $class . '.php';
+        $models = APP_PATH . 'app/model/' . $class . '.php';
 
         if (file_exists($frameworks)) {
             // 加载框架核心类
